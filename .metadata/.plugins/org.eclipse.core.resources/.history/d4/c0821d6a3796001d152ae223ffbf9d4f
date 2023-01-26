@@ -1,9 +1,0 @@
-
-public class Main {
-	public static void main(String[] args) {
-		
-		TextEditor demo = new TextEditor();
-		// TODO Auto-generated method stub
-
-	}
-}
