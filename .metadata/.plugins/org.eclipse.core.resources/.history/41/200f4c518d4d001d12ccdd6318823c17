@@ -1,0 +1,15 @@
+public class index 
+{
+	public static void main(String[]args)
+	{
+		Formulas thing = new Formulas();
+		
+		thing.setAbs(44);
+		System.out.println(thing.getAbs());
+
+
+
+	}
+	
+
+}	

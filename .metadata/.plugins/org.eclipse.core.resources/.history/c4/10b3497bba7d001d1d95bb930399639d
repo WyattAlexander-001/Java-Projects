@@ -1,0 +1,5 @@
+package AsteroidsGame;
+
+public class BaseVectorShape {
+
+}

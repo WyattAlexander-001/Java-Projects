@@ -1,0 +1,9 @@
+package Swing_Tut_9_NewWindow;
+
+public class Main {
+
+	public static void main(String[] args) {
+		LaunchPage launchPage = new LaunchPage();
+	}
+
+}

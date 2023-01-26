@@ -1,0 +1,47 @@
+
+public class Formulas {
+	
+	double answer;
+	double base;
+	double power;
+	int count;
+	
+	
+	
+	//Setters:
+	//Absolute Value
+	public void setAbs(double num)
+	{
+		answer = num;
+	}
+	
+	//
+	public void setExponent(double num1, double num2)
+	{
+		base = num1;
+		power = num2;
+
+	}
+	
+	//Getters
+	//Absolute Value
+	public double getAbs() 
+	{
+		if(answer < 0)
+		{
+			return -1 * answer;
+		}
+		else
+		{
+			return answer;
+		}
+	}
+	
+	public double getExponent()
+	{
+		return base * (base * (power - 1));
+	}
+	
+	
+
+}

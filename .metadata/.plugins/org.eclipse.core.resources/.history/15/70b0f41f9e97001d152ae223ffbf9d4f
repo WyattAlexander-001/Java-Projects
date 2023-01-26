@@ -1,0 +1,30 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class TextEditor extends JFrame implements ActionListener{
+	JTextArea textArea;
+	JScrollPane scrollPane;
+	TextEditor(){
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setTitle("Basic Java Text Editor");
+		this.setSize(500,500);
+		this.setLayout(new FlowLayout());
+		this.setLocationRelativeTo(null);
+		
+		textArea = new JTextArea();
+		
+		textArea.setPreferredSize(new Dimension(450,450));
+		textArea.setLineWrap(true); //Text will now wrap instead of trailing off infinitely like in notepad
+		textArea.setWrapStyleWord(true); //Not sure what this does but it goes with setLineWrap
+		textArea.setFont(new Font("Arial", Font.PLAIN,20));
+		
+		scrollPane = new JScrollPane(textArea);
+		this.add(scrollPane);
+		this.setVisible(true);
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+	}
+}

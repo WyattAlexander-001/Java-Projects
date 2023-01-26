@@ -1,0 +1,13 @@
+import java.awt.event.*;
+import javax.swing.*;
+
+public class TextEditor extends JFrame implements ActionListener{
+	
+	TextEditor(){
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+	}
+}

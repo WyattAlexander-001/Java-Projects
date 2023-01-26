@@ -1,0 +1,23 @@
+
+public class Formulas {
+	
+	double answer;
+	
+	public void setAbs(double num)
+	{
+		answer = num;
+	}
+	
+	public double getAbs() 
+	{
+		if(answer < 0)
+		{
+			return -1 * answer;
+		}
+		else
+		{
+			return answer;
+		}
+	}
+
+}

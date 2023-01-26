@@ -1,0 +1,16 @@
+
+public class Formulas {
+	
+	public static double abs(double num) 
+	{
+		if(num < 0)
+		{
+			return -1 * num;
+		}
+		else
+		{
+			return num;
+		}
+	}
+
+}
