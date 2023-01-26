@@ -1,5 +1,5 @@
 package csi213.lab01;
-//
+
 /**
  * The {@code ForLoopExample} class shows a multiplication table.
  * 
