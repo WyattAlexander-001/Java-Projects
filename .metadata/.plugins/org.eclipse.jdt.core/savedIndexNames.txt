@@ -1,6 +1,5 @@
 INDEX VERSION 1.131+H:\ProgramFiles\eclipse\Lacie\.metadata\.plugins\org.eclipse.jdt.core
 753042103.index
-746260076.index
 815434571.index
 1363629189.index
 1865797976.index
