@@ -19,7 +19,9 @@ public class GamePanel extends JPanel{
 	private MouseInputs mouseInputs;
 	private float xDelta = 100;
 	private float yDelta = 100;
-	private BufferedImage img , subImg;
+	private BufferedImage img;
+	private BufferedImage[][] animation;
+	private int animationTick, animationIndex, animationSpeed = 15; //120FPS/4Frames of Animation = 30 animation speed
 
 
 	
@@ -27,25 +29,39 @@ public class GamePanel extends JPanel{
 
 		mouseInputs = new  MouseInputs(this);
 		importImage();
+		loadAnimations();
 		setPanelSize();
 		addKeyListener(new KeyboardInputs(this));
 		addMouseListener(mouseInputs);
 		addMouseMotionListener(mouseInputs);
 	}
 	
+	private void loadAnimations() {
+		animation = new BufferedImage[9][6]; //sprite sheets is 9y, 6x
+		for(int i =0; i < idleAnimation.length ;i++) {
+			idleAnimation[i] = img.getSubimage(i*64, 0, 64, 40); //64 is the sprite width
+		
+		}
+		
+	}
+
 	private void importImage() {
 		InputStream is = getClass().getResourceAsStream("/player_sprites.png"); //access resources, "/" is used to get to the folder at the same level of src 
 		try {
 			img = ImageIO.read(is);
 		} catch (IOException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				is.close();
+			}catch(IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
 	private void setPanelSize() {
 		Dimension size = new Dimension(1280, 800); // 1280/32 = 40 images wide and 800/32 = 25 images in height
-		//setMinimumSize(size);
-		//setMaximumSize(size);
 		setPreferredSize(size);
 		
 
@@ -53,10 +69,24 @@ public class GamePanel extends JPanel{
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g); //Call superclass JPanel paint component method 
-		g.drawImage(img.getSubimage(0, 0, 64, 40), (int)xDelta, (int)yDelta, 128,80,null); //width is 64, height 40 due to sprite sheet. 128,80 is to double size.
+		
+		updateAnimationTick();
+		
+		g.drawImage(idleAnimation[animationIndex], (int)xDelta, (int)yDelta, 128,80,null); //width is 64, height 40 due to sprite sheet. 128,80 is to double size.
 	
 	}
 	
+	private void updateAnimationTick() {
+		animationTick++;
+		if(animationTick >= animationSpeed){
+			animationTick = 0; //reset the tick
+			animationIndex++;
+			if(animationIndex >= idleAnimation.length) {
+				animationIndex = 0;
+			}
+		}
+	}
+
 	public void changeXDelta(int value) {
 		this.xDelta += value; 
 		repaint(); //repaints new positions
