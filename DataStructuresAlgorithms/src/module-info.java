@@ -5,5 +5,5 @@
  * @author Wyatt
  *
  */
-module csi213 {
+module DataStructuresAlgorithms {
 }
