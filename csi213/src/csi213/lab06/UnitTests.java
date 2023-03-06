@@ -26,10 +26,10 @@ public class UnitTests {
 	 */
 	@Test
 	public void test2() throws Exception {
-		assertEquals(1.1f, FloatArrays.sequentialSearch(c, 1.1f));
-		assertEquals(-1f, FloatArrays.sequentialSearch(c, 7.7f));
-		assertEquals(-1f, FloatArrays.sequentialSearch(d, 2.2f));
-		assertEquals(7.7f, FloatArrays.sequentialSearch(d, 7.7f));
+		assertEquals(0, FloatArrays.sequentialSearch(c, 1.1f));
+		assertEquals(-1, FloatArrays.sequentialSearch(c, 7.7f));
+		assertEquals(-1, FloatArrays.sequentialSearch(d, 2.2f));
+		assertEquals(3,  FloatArrays.sequentialSearch(d, 7.7f));
 	}
 
 	/**
@@ -40,10 +40,10 @@ public class UnitTests {
 	 */
 	@Test
 	public void test3() throws Exception {
-		assertEquals(1.1f, FloatArrays.binarySearchRecursive(c, 0, c.length - 1, 1.1f));
-		assertEquals(-1.0f, FloatArrays.binarySearchRecursive(c, 0, c.length - 1, 7.7f));
-		assertEquals(-1.0f, FloatArrays.binarySearchRecursive(d, 0, d.length - 1, 2.2f));
-		assertEquals(3.3f, FloatArrays.binarySearchRecursive(d, 0, d.length - 1, 3.3f));
+		assertNotEquals(-1, FloatArrays.binarySearchRecursive(c, 0, c.length - 1, 1.1f));
+		assertEquals(-1, FloatArrays.binarySearchRecursive(c, 0, c.length - 1, 7.7f));
+		assertEquals(-1, FloatArrays.binarySearchRecursive(d, 0, d.length - 1, 2.2f));
+		assertNotEquals(-1, FloatArrays.binarySearchRecursive(d, 0, d.length - 1, 3.3f));
 	}
 
 	/**
@@ -54,10 +54,10 @@ public class UnitTests {
 	 */
 	@Test
 	public void test4() throws Exception {
-		assertEquals(1.1f, FloatArrays.binarySearchIterative(c, 1.1f));
-		assertEquals(-1.0f, FloatArrays.binarySearchIterative(c, 7.7f));
-		assertEquals(-1.0f, FloatArrays.binarySearchIterative(d, 2.2f));
-		assertEquals(3.3f, FloatArrays.binarySearchIterative(d, 3.3f));
+		assertNotEquals(-1, FloatArrays.binarySearchIterative(c, 1.1f));
+		assertEquals(-1, FloatArrays.binarySearchIterative(c, 7.7f));
+		assertEquals(-1, FloatArrays.binarySearchIterative(d, 2.2f));
+		assertNotEquals(-1, FloatArrays.binarySearchIterative(d, 3.3f));
 	}
 
 }

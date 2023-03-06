@@ -3,7 +3,7 @@ package csi213.lab06;
 import java.util.Arrays;
 
 /**
- * This {@code IntArrays} class provides methods for manipulating {@code int} arrays.
+ * This {@code FloatArrays} class provides methods for manipulating {@code float} arrays.
  * 
  * @author Jeong-Hyon Hwang (jhh@cs.albany.edu)
  */
@@ -20,9 +20,11 @@ public class FloatArrays {
 	 * @return the location of the specified value (the index at which the specified value is stored) in the specified
 	 *         array; {@code -1} if the specified value is not in the array
 	 */
-	public static float sequentialSearch(float[] a, float x) {
-		// TODO: add some code here
-		
+	public static int sequentialSearch(float[] a, float x) {
+		for(int i=0; i<a.length;i++) {
+			if(a[i] == x)
+				return i;
+		}
 		return -1;
 	}
 
@@ -41,10 +43,18 @@ public class FloatArrays {
 	 * @return the location of the specified value (the index at which the specified value is stored) in the specified
 	 *         array; {@code -1} if the specified value is not in the array
 	 */
-	public static float binarySearchRecursive(float[] a, float lower, float upper, float x) {
-		// TODO: add some code here
-		
-		return -1;
+	public static int binarySearchRecursive(float[] a, float lower, float upper, float x) {
+	    if (upper >= lower) {
+	        int middleIndex = (int) (lower + (upper - lower) / 2);   
+	        if (a[middleIndex] == x) { // Best case is in middle
+	            return middleIndex;
+	        } else if ( x < a[middleIndex]){ // If element is < than mid, then element is in left array
+	            return binarySearchRecursive(a, lower, middleIndex - 1, x);
+	        } else { //If element is > than mid, then element is in right array
+		        return binarySearchRecursive(a, middleIndex + 1, upper, x);
+	        }
+	    }	
+		return -1; //DNE
 	}
 
 	/**
@@ -58,10 +68,23 @@ public class FloatArrays {
 	 * @return the location of the specified value (the index at which the specified value is stored) in the specified
 	 *         array; {@code -1} if the specified value is not in the array
 	 */
-	public static float binarySearchIterative(float[] a, float x) {
-		// TODO: add some code here
-
-		return -1;
+	public static int binarySearchIterative(float[] a, float x) {
+        int left = 0; 
+        int right = a.length - 1; //final index
+ 
+        while (left <= right){ //loop until success
+            int middleIndex = (left + right) / 2;
+            if (x == a[middleIndex]) { //Best case if in middle of arr
+                return middleIndex;
+            }
+            else if (x < a[middleIndex]) {
+                right = middleIndex - 1;
+            }
+            else {
+                left = middleIndex + 1;
+            }
+        }
+		return -1; //DNE
 	}
 
 	/**
