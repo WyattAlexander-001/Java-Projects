@@ -12,7 +12,6 @@ INDEX VERSION 1.134+H:\ProgramFiles\eclipse\Lacie\.metadata\.plugins\org.eclipse
 137057239.index
 451359022.index
 746260076.index
-753042103.index
 3126499244.index
 80294477.index
 1890585213.index
