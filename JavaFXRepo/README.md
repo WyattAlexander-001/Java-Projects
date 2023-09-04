@@ -9,3 +9,5 @@
 
 * Go to dependencies, move JavaFX to ModulePath Entries and out of classpath. 
 * Simply click on Modulepath Entries then go to advanced and use "Add library" -> User Library -> JavaFX
+
+* In the future I'll have to add pictures to my README(s).
