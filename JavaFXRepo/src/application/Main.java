@@ -3,9 +3,12 @@ package application;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -18,8 +21,11 @@ public class Main extends Application {
             scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
             primaryStage.setTitle("Hello World!");
             primaryStage.setScene(scene);
+            
+            
 
-            Text txt = new Text("SUP? This is your first JavaFX");
+            Text txt = new Text("Hello, This is your 2nd JavaFX");
+            txt.setFont(new Font("Papyrus", 15));
             TextField nameFld = new TextField();
             //root.setCenter(txt);
 
@@ -29,11 +35,20 @@ public class Main extends Application {
             btn.setOnAction(evt -> System.out.printf("You clicked the button: %s%n", nameFld.getText())); //Outputs to console using lambda exp
             //root.setTop(btn);
 
-            VBox box = new VBox();
-            box.getChildren().addAll(txt,  nameFld,btn);
-            root.setCenter(box);
-   
+
             
+            Label label = new Label("Name: ");
+            GridPane grid = new GridPane();
+            grid.add(label, 0, 0); //columnms, row
+            grid.add(nameFld, 1, 0);
+            grid.add(btn, 2, 0);
+            grid.setHgap(25);
+            grid.setGridLinesVisible(true); //good for debugging grids
+
+   
+            VBox box = new VBox();
+            box.getChildren().addAll(txt, grid);
+            root.setCenter(box);
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();
