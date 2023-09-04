@@ -25,7 +25,7 @@ public class Main extends Application {
 
             Button btn = new Button();
             String name = "Wyatt";
-            btn.setText("Howdy, Click here and it will output to console: " + name);
+            btn.setText("Howdy, Click here and it will output to console, also I'm: " + name);
             btn.setOnAction(evt -> System.out.printf("You clicked the button: %s%n", nameFld.getText())); //Outputs to console using lambda exp
             //root.setTop(btn);
 
