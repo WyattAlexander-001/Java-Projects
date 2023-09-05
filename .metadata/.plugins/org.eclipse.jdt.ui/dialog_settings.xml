@@ -2,7 +2,9 @@
 <section name="Workbench">
 	<item key="org.eclipse.jdt.ui.last.selected.jre.kind2" value="2"/>
 	<item key="org.eclipse.jdt.ui.last.selected.execution.enviroment" value="JavaSE-17"/>
-	<item key="org.eclipse.jdt.ui.lastextjar" value="H:\ProgramFiles\eclipse\externalJars\openjfx-19_windows-x64_bin-sdk\javafx-sdk-19\lib"/>
+	<item key="org.eclipse.jdt.ui.lastextjar" value="H:\ProgramFiles\eclipse\openjfx-20.0.2_windows-x64_bin-sdk\javafx-sdk-20.0.2\lib"/>
+	<item key="org.eclipse.jdt.ui.last.selected.create.moduleinfo.comments" value="false"/>
+	<item key="org.eclipse.jdt.ui.last.selected.create.moduleinfo" value="false"/>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item key="group_libraries" value="true"/>
 		<item key="layout" value="2"/>
@@ -34,7 +36,7 @@
 		<item key="GenerateJavadoc" value="false"/>
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item key="pageIndex" value="3"/>
+		<item key="pageIndex" value="2"/>
 	</section>
 	<section name="ClasspathContainerSelectionPage">
 		<item key="index" value="6"/>
